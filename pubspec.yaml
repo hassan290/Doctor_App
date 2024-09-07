@@ -57,8 +57,6 @@ dependencies:
   easy_localization: ^3.0.7
   # Splash screen
   flutter_native_splash: ^2.4.1
-  # An SVG rendering and widget library for Flutter, which allows painting SVG images as widgets on Flutter
-  flutter_svg: ^2.0.10+1
   # Adapting screen and font size
   flutter_screenutil: ^5.9.3
   # Firebase
@@ -71,6 +69,8 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   # Easy way to add shimmer effect
   shimmer: ^3.0.0
+  # An SVG rendering and widget library for Flutter, which allows painting SVG images as widgets on Flutter
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -95,7 +95,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/svgs/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

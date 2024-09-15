@@ -1,10 +1,16 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
+import 'package:doctor_app/core/validators/validators.dart';
 import 'package:doctor_app/core/widgets/app_text_button.dart';
 import 'package:doctor_app/core/widgets/app_text_form_field.dart';
+import 'package:doctor_app/features/login/data/remote/models/login_request_body.dart';
+import 'package:doctor_app/features/login/presentation/manager/cubit/login_cubit.dart';
+import 'package:doctor_app/features/login/presentation/manager/cubit/login_state.dart';
 import 'package:doctor_app/features/login/presentation/pages/widgets/already_have_account.dart';
+import 'package:doctor_app/features/login/presentation/pages/widgets/login_bloc_listener.dart';
 import 'package:doctor_app/features/login/presentation/pages/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,6 +18,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = context.read<LoginCubit>();
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -31,15 +39,32 @@ class LoginScreen extends StatelessWidget {
                 ),
                 verticalSpace(36),
                 Form(
+                  key: controller.formKey,
                   child: Column(
                     children: [
-                      const AppTextFormField(hintText: 'Email'),
-                      verticalSpace(16),
                       AppTextFormField(
-                        hintText: 'Password',
-                        isObsecureText: true,
-                        suffixIcon: GestureDetector(
-                            onTap: () {}, child: const Icon(Icons.visibility)),
+                        hintText: 'Email',
+                        controller: controller.emailController,
+                        validator: AppValidator.validateEmail,
+                      ),
+                      verticalSpace(16),
+                      BlocBuilder<LoginCubit, LoginState>(
+                        builder: (context, state) {
+                          return AppTextFormField(
+                            hintText: 'Password',
+                            controller: controller.passwordController,
+                            isObsecureText: controller.isObsecure,
+                            validator: AppValidator.validatePassword,
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                                controller.changeObscure();
+                              },
+                              child: controller.isObsecure
+                                  ? const Icon(Icons.visibility_off)
+                                  : const Icon(Icons.visibility),
+                            ),
+                          );
+                        },
                       ),
                       verticalSpace(16),
                       Align(
@@ -53,12 +78,20 @@ class LoginScreen extends StatelessWidget {
                       AppTextButton(
                         buttonText: 'Login',
                         textStyle: TTextStyles.font16WhiteSemiBold,
-                        onPressed: () {},
+                        onPressed: () {
+                          if (controller.formKey.currentState!.validate()) {
+                            controller.emitLoginStates(LoginRequestBody(
+                                email: controller.emailController.text,
+                                password: controller.passwordController.text));
+                          }
+                        },
                       ),
                       verticalSpace(25),
                       const TermsAndConditionsText(),
                       verticalSpace(40),
                       const AlreadyHaveAccountText(),
+                      const LoginBlocListener(),
+                      
                     ],
                   ),
                 ),

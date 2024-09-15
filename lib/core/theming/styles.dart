@@ -27,6 +27,17 @@ class TTextStyles {
     fontWeight: TFontWeight.semiBold,
     color: Colors.white,
   );
+  static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: TFontWeight.medium,
+    color: TColors.darkBlue,
+  );
+
+  static TextStyle font14BlueSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: TFontWeight.semiBold,
+    color: TColors.mainBlue,
+  );
 
   static TextStyle font14DarkBlueMedium = TextStyle(
     fontSize: 14.sp,

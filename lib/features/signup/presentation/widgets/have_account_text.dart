@@ -5,8 +5,8 @@ import 'package:doctor_app/core/theming/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class AlreadyHaveAccountText extends StatelessWidget {
-  const AlreadyHaveAccountText({super.key});
+class HaveAccountText extends StatelessWidget {
+  const HaveAccountText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +15,13 @@ class AlreadyHaveAccountText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-              text: 'Don\'t have an account yet? ',
+              text: 'Already have an account yet? ',
               style: TTextStyles.font13DarkBlueRegular),
           TextSpan(
-            text: 'Sign Up',
+            text: 'Login',
             style: TTextStyles.font13BlueSemiBold
                 .copyWith(color: TColors.mainBlue),
-            recognizer: TapGestureRecognizer()..onTap = () => context.pushNamed(Routes.signup),
+            recognizer: TapGestureRecognizer()..onTap = () => context.pushNamed(Routes.login),
           ),
         ],
       ),

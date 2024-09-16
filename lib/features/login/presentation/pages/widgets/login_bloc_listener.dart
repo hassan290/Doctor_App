@@ -5,7 +5,6 @@ import 'package:doctor_app/core/theming/styles.dart';
 import 'package:doctor_app/features/login/presentation/manager/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/presentation/manager/cubit/login_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginBlocListener extends StatelessWidget {

@@ -9,8 +9,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
-  await ScreenUtil.ensureScreenSize();
   await setupGetIt();
+  await ScreenUtil.ensureScreenSize();
   runApp(DocApp(
     appRouter: AppRouter(),
   ));

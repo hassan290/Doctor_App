@@ -1,9 +1,8 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
-import 'package:doctor_app/core/widgets/app_text_button.dart';
-import 'package:doctor_app/features/login/presentation/pages/widgets/already_have_account.dart';
 import 'package:doctor_app/features/login/presentation/pages/widgets/terms_and_conditions.dart';
 import 'package:doctor_app/features/signup/presentation/widgets/have_account_text.dart';
+import 'package:doctor_app/features/signup/presentation/widgets/signup_bloc_listener.dart';
 import 'package:doctor_app/features/signup/presentation/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,7 +38,7 @@ class SignupScreen extends StatelessWidget {
                     const TermsAndConditionsText(),
                     verticalSpace(40),
                     const HaveAccountText(),
-
+                    const SignupBlocListener(),
                   ],
                 ),
               ],

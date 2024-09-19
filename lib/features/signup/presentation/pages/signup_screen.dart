@@ -1,7 +1,5 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
-import 'package:doctor_app/core/widgets/app_text_button.dart';
-import 'package:doctor_app/features/login/presentation/pages/widgets/already_have_account.dart';
 import 'package:doctor_app/features/login/presentation/pages/widgets/terms_and_conditions.dart';
 import 'package:doctor_app/features/signup/presentation/widgets/have_account_text.dart';
 import 'package:doctor_app/features/signup/presentation/widgets/signup_form.dart';

@@ -60,7 +60,7 @@ dependencies:
   # Adapting screen and font size
   flutter_screenutil: ^5.9.3
   # Firebase
-  firebase_core: ^3.4.0
+  firebase_core: ^3.5.0
   # To load and cache network images
   cached_network_image: ^3.4.0
   # Reading and writing simple key-value pairs

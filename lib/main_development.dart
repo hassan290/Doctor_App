@@ -12,7 +12,6 @@ void main() async {
   await setupGetIt();
   // To fix texts being hidden bug in flutter_screenutil in release mode.
   await ScreenUtil.ensureScreenSize();
-  await setupGetIt();
   runApp(DocApp(
     appRouter: AppRouter(),
   ));

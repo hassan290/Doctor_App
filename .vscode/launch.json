@@ -6,14 +6,25 @@
         "request": "launch",
         "type": "dart",
         "program": "lib/main_development.dart",
+<<<<<<< HEAD
         "args": ["--flavor", "Development", "--target", "lib/main_development.dart" ]
+=======
+        "args": ["--flavor", "development", "--target", "lib/main_development.dart" ]
+>>>>>>> 4d2059f652cc0c37cb67c6fcff53744e984897f7
       },
       {
         "name": "DocDoc Production",
         "request": "launch",
         "type": "dart",
         "program": "lib/main_production.dart",
+<<<<<<< HEAD
         "args": ["--flavor", "Production", "--target", "lib/main_production.dart" ]
       }
     ],
+=======
+        "args": ["--flavor", "production", "--target", "lib/main_production.dart" ]
+      }
+    ],
+    "compounds": []
+>>>>>>> 4d2059f652cc0c37cb67c6fcff53744e984897f7
   }
